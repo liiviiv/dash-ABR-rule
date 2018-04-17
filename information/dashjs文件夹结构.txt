@@ -1,0 +1,14 @@
+build：完整项目代码输出目录，包括未压缩版本和压缩版本及映射文件。编译好的输出文件包含完整的dash.js库代码，它由不同代码目录下的源代码编译而成。
+如果需要直接使用dash.js而不处理编译发布相关的事情，那么可以直接使用build目录中编译好的dash.all.debug.js或dash.all.min.js，当然第一次
+需要使用grunt编译一遍。
+samples：dash.js源代码在不同的模块中的使用方法。
+src：dash.js的源代码（主要需要看的代码）
+node_modules：存放项目依赖的库
+Gruntfile.json：使用grunt运行程序的默认顺序（grunt的配置文件）
+packet.json：代码所依赖的所有外部包及项目相关信息
+mochahook.js：mocha是一个功能丰富的js测试框架，可以使测试更方便，hook 可以理解为是一些逻辑，通常表现为一个函数或者一些声明，
+当特定的事件触发时hook 才执行，因此这个js文件是有关测试的，暂不用看
+MediaPlayer.uml：uml是建模工具，该文件是客户端播放器的大体框架，需要看一下，如何打开uml文件自行百度
+onDemand_test：用来测试的html文件
+index.js：整个项目的入口文件
+index_mediaplayerOnly.js：只包含了播放器相关的代码，若只考虑播放器就可以从这个文件开始入手。

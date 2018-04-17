@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dash.js Rocks</title>
+        <style>
+            video {
+                width: 640px;
+                height: 360px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <video id="videoPlayer" controls></video>
+        </div>
+        <script src="../dist/dash.all.debug.js"></script>
+        <!-- ctrl+K,ctrl+c...ctrl+k,ctrl+u -->
+        <script>
+            (function(){
+                //var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+				var url = "https://dash.edgesuite.net/akamai/bbb_30fps/bbb_30fps.mpd";//mpd文件的url地址
+                var player = dashjs.MediaPlayer().create();
+                //************added by ph below****************
+                player.useDefaultABRRules(false);
+                player.useQORARule(true);
+                //player.setABRStrategy("abrBola");
+                //************added by ph above****************
+                player.initialize(document.querySelector("#videoPlayer"), url, true);
+            })();
+        </script>
+    </body>
+</html>
